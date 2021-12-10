@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
 void print(int ar[], int size)
@@ -50,14 +49,17 @@ int main()
                 break;
             }
         }
+        if (i > 0 && a < ar[i - 1])
+        {
+            i--;
+            cout << "\n\t you have entered lower value so it is discarded!!\n";
+            flag = false;
+        }
         if (flag)
         {
             ar[i] = a;
         }
     }
-
-    sort(ar, ar + size);
-
     cout << "\n\t ENTERED ARRAY : \n";
     print(ar, size);
     cout << endl;
